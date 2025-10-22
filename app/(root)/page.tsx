@@ -11,8 +11,8 @@ export default function Home() {
       {/* Also, its slightly bigger than the widgets. In the figma design I saw that the left part (836px) is slightly wider than right part (720px)*/}
       <LeftComponent className={"flex-13/24"} />
 
-      <div className="flex-11/24 flex flex-col gap-6">
-        {/* Made WidgetContainer a reusable component since it has a common style*/}
+      <div className="flex-11/24 flex flex-col gap-8">
+        {/* Made WidgetContainer a reusable component since it has common styles*/}
         <WidgetContainer className="flex-1/2">
           <ProfileWidget />
         </WidgetContainer>

@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
-@theme {
+/* All colors were copied from the figma design or picked up using Windows color picker (Windows Key + Shift + C)*/
+@theme {  
   --color-bg-gradient-start-gray: #373E44;
   --color-bg-gradient-end-dark-gray: #191B1F;
+
+  --color-widget-container-bg: #363C43;
 }
 
 .layout-container {
   @apply py-[10vh] px-[3vw] w-full
+}
+
+/* tailwind doesnt have a default offset box shadow so creating a custom one
+   format is shadow-[horizontalOffset_verticalOffset_blurRadius_color(either rgba or rgb)] */
+.offset-box-shadow {
+  @apply shadow-[3px_3px_10px_rgba(0,0,0,0.75)]
 }
 
 

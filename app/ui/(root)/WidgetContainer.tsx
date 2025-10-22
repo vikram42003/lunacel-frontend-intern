@@ -1,16 +1,26 @@
-import clsx from "clsx"
-import React from "react"
+import clsx from "clsx";
+import Image from "next/image";
+import React from "react";
 
-const CardView = ({ children, className }: Readonly<{ children: React.ReactNode, className: string }>) => {
+const WidgetContainer = ({ children, className }: Readonly<{ children: React.ReactNode; className: string }>) => {
   // todo - add some hover text to the question mark
   return (
-    <div className={clsx(className, "flex rounded-3xl overflow-hidden")}>
-      <div className="flex-1/12 bg-green-300"></div>
-      <div className="flex-11/12 bg-green-900">
-        {children}
+    <div
+      className={clsx(className, "flex rounded-2xl overflow-hidden bg-widget-container-bg offset-box-shadow px-3 py-4")}
+    >
+      <div className="flex-1/12 relative">
+        <Image src="/question_mark_icon.svg" alt="Icom of a question mark icon" height="24" width="24" />
+        <Image
+          src="/grabbable_handle_icon.svg"
+          alt="Icon of a handle you can grab to move the component"
+          height="24"
+          width="24"
+          className="absolute top-1/2 -translate-y-1/2 cursor-pointer"
+        />
       </div>
+      <div className="flex-11/12">{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default CardView
+export default WidgetContainer;
