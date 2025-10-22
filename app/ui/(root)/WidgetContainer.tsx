@@ -18,7 +18,8 @@ const WidgetContainer = ({ children, className }: Readonly<{ children: React.Rea
           className="absolute top-1/2 -translate-y-1/2 cursor-pointer"
         />
       </div>
-      <div className="flex-11/12">{children}</div>
+      <div className="flex-10/12">{children}</div>
+      <div className="flex-1/12"></div>
     </div>
   );
 };
