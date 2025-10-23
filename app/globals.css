@@ -5,7 +5,20 @@
   --color-bg-gradient-start-gray: #373E44;
   --color-bg-gradient-end-dark-gray: #191B1F;
 
+  --color-left-component-gray: rgba(97, 97, 97, 0.82);
+
   --color-widget-container-bg: #363C43;
+  --color-button-bg: #171717;
+  --color-active-button-bg: #28292F;
+  --color-inavtive-button: #a5adb1;
+  
+  --color-text-gray: #969696;
+}
+
+/* In your globals.css file */
+.bg-wipe-gradient {
+  background-image: linear-gradient(to right, var(--color-button-bg) 0%, #27292b 50%, transparent 50%);
+  background-size: 200% 100%;
 }
 
 .layout-container {

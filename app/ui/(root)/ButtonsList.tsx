@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { motion } from "motion/react";
 
 const ButtonsList = ({
@@ -11,23 +10,26 @@ const ButtonsList = ({
   selected: string;
 }) => {
   return (
-    <div className="flex">
+    <div className="flex text-sm bg-button-bg text-inavtive-button rounded-2xl overflow-hidden border-6 border-button-bg">
       {buttonsList.map((buttonText, idx) => (
-        <button
+        <motion.button
           key={buttonText + idx}
-          className="grow rounded-lg relative"
           onClick={() => setActiveButton(buttonText)}
+          className="grow rounded-2xl relative py-2.5 bg-wipe-gradient hover:cursor-pointer"
+          initial={{ backgroundPosition: "100% 0%" }}
+          whileHover={{ backgroundPosition: "0% 0%" }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
-          <span className="relative z-30">{buttonText}</span>
-          
+          <span className={`relative z-30 ${buttonText === selected ? "text-white" : ""}`}>{buttonText}</span>
+
           {buttonText === selected && (
             <motion.div
-              className="absolute inset-0 bg-blue-300 z-10 h-full w-full rounded-lg"
+              className="absolute inset-0 bg-active-button-bg z-10 h-full w-full rounded-2xl"
               layoutId="ButtonList"
               transition={{ type: "tween", duration: 0.3 }}
             ></motion.div>
           )}
-        </button>
+        </motion.button>
       ))}
     </div>
   );
