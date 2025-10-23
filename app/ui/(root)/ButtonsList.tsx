@@ -10,7 +10,7 @@ const ButtonsList = ({
   selected: string;
 }) => {
   return (
-    <div className="flex text-sm bg-button-bg text-inavtive-button rounded-2xl overflow-hidden border-6 border-button-bg">
+    <div className="flex  shrink-0 text-sm bg-button-bg text-inavtive-button rounded-2xl border-6 border-button-bg">
       {buttonsList.map((buttonText, idx) => (
         <motion.button
           key={buttonText + idx}
@@ -24,7 +24,7 @@ const ButtonsList = ({
 
           {buttonText === selected && (
             <motion.div
-              className="absolute inset-0 bg-active-button-bg z-10 h-full w-full rounded-2xl"
+              className="absolute inset-0 bg-active-button-bg z-10 h-full w-full rounded-2xl shadow-[10px_10px_50px_10px_rgba(0,0,0,1)]"
               layoutId="ButtonList"
               transition={{ type: "tween", duration: 0.3 }}
             ></motion.div>

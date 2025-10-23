@@ -25,8 +25,7 @@
   @apply py-[10vh] px-[3vw] w-full
 }
 
-/* tailwind doesnt have a default offset box shadow so creating a custom one
-   format is shadow-[horizontalOffset_verticalOffset_blurRadius_color(either rgba or rgb)] */
+/* tailwind doesnt have a default offset box shadow so creating a custom one */
 .offset-box-shadow {
   @apply shadow-[3px_3px_10px_rgba(0,0,0,0.75)]
 }
