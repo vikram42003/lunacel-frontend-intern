@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 
 const WidgetContainer = ({ children, className }: Readonly<{ children: React.ReactNode; className: string }>) => {
-  // todo - add some hover text to the question mark
   return (
     <div
       className={clsx(className, "flex rounded-2xl overflow-hidden bg-widget-container-bg offset-box-shadow px-3 py-4")}

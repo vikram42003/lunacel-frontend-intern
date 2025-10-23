@@ -1,5 +1,5 @@
 import WidgetContainer from "../ui/(root)/WidgetContainer";
-import GalleryCard from "../ui/(root)/GalleryWidget";
+import GalleryWidget from "../ui/(root)/GalleryWidget";
 import LeftComponent from "../ui/(root)/LeftComponent";
 import ProfileWidget from "../ui/(root)/ProfileWidget";
 
@@ -18,7 +18,7 @@ export default function Home() {
         </WidgetContainer>
 
         <WidgetContainer className="flex-1/2">
-          <GalleryCard />
+          <GalleryWidget />
         </WidgetContainer>
       </div>
     </section>

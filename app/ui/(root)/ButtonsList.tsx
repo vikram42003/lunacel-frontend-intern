@@ -15,7 +15,7 @@ const ButtonsList = ({
         <motion.button
           key={buttonText + idx}
           onClick={() => setActiveButton(buttonText)}
-          className="grow rounded-2xl relative py-2.5 bg-wipe-gradient hover:cursor-pointer"
+          className={`grow rounded-2xl relative py-2.5 bg-wipe-gradient ${buttonText === selected ? "" : "hover:cursor-pointer"}`}
           initial={{ backgroundPosition: "100% 0%" }}
           whileHover={{ backgroundPosition: "0% 0%" }}
           transition={{ duration: 0.4, ease: "easeInOut" }}

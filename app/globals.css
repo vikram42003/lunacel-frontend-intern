@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 /* All colors were copied from the figma design or picked up using Windows color picker (Windows Key + Shift + C)*/
+/* I only made the commonly used colors into variables, one time use colors are used as inline tailwind styles*/
 @theme {  
   --color-bg-gradient-start-gray: #373E44;
   --color-bg-gradient-end-dark-gray: #191B1F;
@@ -30,6 +31,10 @@
   @apply shadow-[3px_3px_10px_rgba(0,0,0,0.75)]
 }
 
+.splide__track,
+.splide__list {
+  overflow: visible;
+}
 
 /* Commenting out default tailwind styles that get generate when you do pnpm create next-app */
 /* :root {
