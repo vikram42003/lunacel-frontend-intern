@@ -1,14 +1,29 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 // @ts-expect-error splidejs package is missing its TypeScript types. The package and code works fine, just the types are missing, so its safe to ignore
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { RightArrowIcon } from "./icons/RightArrowIcon";
 
+const initialImages = [
+  { id: 1, src: "/images/placeholder_img.jpg" },
+  { id: 2, src: "/images/placeholder_img.jpg" },
+  { id: 3, src: "/images/placeholder_img.jpg" },
+  { id: 4, src: "/images/placeholder_img.jpg" },
+];
+
 const GalleryWidget = () => {
+  const [images, setImages] = useState<{ id: number; src: string }[]>(initialImages);
   const splideRef = useRef(null);
+
+  const handleAddImageClick = () => {
+    setImages(images.concat({ id: images.length + 1, src: "/images/placeholder_img.jpg" }));
+    alert(
+      "This button would handle adding new images, but since we need a database for that and setting up and integrating the db and writing Nextjs Server Actions would be outside the scope of this assignment, we will just be adding another placeholder image",
+    );
+  };
 
   const goPrev = () => {
     // @ts-expect-error Reason defined above
@@ -30,8 +45,9 @@ const GalleryWidget = () => {
 
         <div className="flex items-center gap-8">
           <button
-            className="text-white text-[0.7rem] py-3.5 px-6 rounded-full inset-shadow-[1px_1px_5px_0px_rgba(255,255,255,0.3)] 
+            className="text-white text-[0.7rem] py-3.5 px-6 hover:cursor-pointer rounded-full inset-shadow-[1px_1px_5px_0px_rgba(255,255,255,0.3)] 
             shadow-[5px_5px_5px_0px_rgba(0,0,0,0.5)]"
+            onClick={handleAddImageClick}
           >
             + ADD IMAGE
           </button>
@@ -50,6 +66,7 @@ const GalleryWidget = () => {
         ref={splideRef}
         options={{
           perPage: 3,
+          perMove: 1,
           height: "10rem",
           gap: "1.2rem",
           arrows: false,
@@ -59,13 +76,13 @@ const GalleryWidget = () => {
         hasTrack={false}
       >
         <SplideTrack className="pt-4 pb-2 px-24">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <SplideSlide key={index} className="relative rounded-2xl pt-4">
+          {images.map(({ id, src }) => (
+            <SplideSlide key={id} className="relative rounded-2xl pt-4">
               <div className="relative w-full h-full overflow-visible rounded-2xl">
                 <Image
                   fill
-                  src="/images/placeholder_img.jpg"
-                  alt={`Placeholder image ${index}`}
+                  src={src}
+                  alt={`Placeholder image ${id}`}
                   className="rounded-2xl object-cover grayscale transition-all duration-500 ease-in-out
                     hover:grayscale-0 hover:-translate-y-2 hover:-rotate-2 hover:scale-105 hover:shadow-[5px_5px_7px_3px_rgba(0,0,0,0.5)]"
                 />

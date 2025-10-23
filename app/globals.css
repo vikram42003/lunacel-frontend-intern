@@ -31,11 +31,6 @@
   @apply shadow-[3px_3px_10px_rgba(0,0,0,0.75)]
 }
 
-.splide__track,
-.splide__list {
-  overflow: visible;
-}
-
 /* Commenting out default tailwind styles that get generate when you do pnpm create next-app */
 /* :root {
   --background: #ffffff;
