@@ -10,10 +10,10 @@ const ProfileCard = () => {
   const [activeButton, setActiveButton] = useState<string>(list[0]);
 
   return (
-    <div className="h-full flex flex-col text-[1vh] justify-between">
+    <div className="flex flex-col justify-between">
       <ButtonsList buttonsList={list} setActiveButton={setActiveButton} selected={activeButton} />
 
-      <p className="mt-8 text-[1vw] text-text-gray overflow-ellipsis relative">
+      <p className="mt-8 3xl:text-3xl text-[0.97rem] 3xl:mt-12 text-text-gray overflow-ellipsis relative">
         Hello! I’m Dave, your sales rep here from Salesforce. I’ve been working at this awesome company for 3 years now.
         <br />
         <br />I was born and raised in Albany, NY& have been living in Santa Carla for the past 10 years my wife Tiffany

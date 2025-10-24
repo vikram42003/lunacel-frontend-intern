@@ -10,7 +10,7 @@ const ButtonsList = ({
   selected: string;
 }) => {
   return (
-    <div className="flex shrink-0 xl:text-[2vh] md:text-sm bg-button-bg text-inavtive-button rounded-2xl border-6 border-button-bg">
+    <div className="flex shrink-0 3xl:text-2xl md:text-sm bg-button-bg text-inavtive-button rounded-2xl border-6 3xl:border-10 border-button-bg">
       {buttonsList.map((buttonText, idx) => (
         <motion.button
           key={buttonText + idx}

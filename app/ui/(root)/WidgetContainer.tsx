@@ -1,11 +1,10 @@
-import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 
 const WidgetContainer = ({ children, className }: Readonly<{ children: React.ReactNode; className: string }>) => {
   return (
     <div className={className + " flex flex-col"}>
-      <div className="flex h-full rounded-2xl bg-widget-container-bg offset-box-shadow px-3 py-4">
+      <div className="flex h-full rounded-2xl bg-widget-container-bg offset-box-shadow px-3 py-4 3xl:px-6 3xl:py-8">
         <div className="flex-1/12 relative">
           <Image src="/question_mark_icon.svg" alt="Icom of a question mark icon" height="24" width="24" className="hover:cursor-help"/>
           <Image
@@ -20,7 +19,7 @@ const WidgetContainer = ({ children, className }: Readonly<{ children: React.Rea
         <div className="flex-1/12"></div>
       </div>
 
-      <hr className="block h-1 mt-4 w-[85%] mx-auto bg-neutral-700 border-0 rounded-lg shadow-[3px_3px_10px_2px_rgba(0,0,0,0.5)]" />
+      <hr className="block h-1 3xl:h-2 mt-4 3xl:mt-12 w-[85%] mx-auto bg-neutral-700 border-0 rounded-lg shadow-[3px_3px_10px_2px_rgba(0,0,0,0.5)]" />
     </div>
   );
 };
