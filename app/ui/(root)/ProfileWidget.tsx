@@ -10,10 +10,10 @@ const ProfileCard = () => {
   const [activeButton, setActiveButton] = useState<string>(list[0]);
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col text-[1vh] justify-between">
       <ButtonsList buttonsList={list} setActiveButton={setActiveButton} selected={activeButton} />
 
-      <p className="mt-8 max-h-full text-[0.97rem] text-text-gray overflow-ellipsis relative">
+      <p className="mt-8 text-[1vw] text-text-gray overflow-ellipsis relative">
         Hello! I’m Dave, your sales rep here from Salesforce. I’ve been working at this awesome company for 3 years now.
         <br />
         <br />I was born and raised in Albany, NY& have been living in Santa Carla for the past 10 years my wife Tiffany
@@ -22,6 +22,7 @@ const ProfileCard = () => {
 
         {/* Didnt know if it was a scrollbar or an icon so i've put the icon here
             we can just create a custom scrollbar using tailwind-scrollbar package incase a scrollbar is needed */}
+        {/* Since the text we have is limited and I need to replicate the design 1-1, im putting the this here as a svg for now */}
         <Image
           src="/rectangle_in_profile_widget_icon.svg"
           alt="Icon of a rectangle"

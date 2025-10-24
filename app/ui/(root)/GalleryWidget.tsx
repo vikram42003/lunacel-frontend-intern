@@ -14,6 +14,9 @@ const initialImages = [
   { id: 4, src: "/images/placeholder_img.jpg" },
 ];
 
+// I realized that this component can be broken down into smaller components, but since the logic of fetching the galelry items would likely 
+// be an api request and since GalleryWidget only has 1 function, fetching gallery images, it would be appropriate to make let it be self contained
+
 const GalleryWidget = () => {
   const [images, setImages] = useState<{ id: number; src: string }[]>(initialImages);
   const splideRef = useRef(null);
